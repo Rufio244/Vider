@@ -1,2 +1,41 @@
-# Vider
-The water that is added to the glass depends on how much the person who adds it, and after you finish filling, you can take the water and suck it. Tumblers
+# 🚀⚡ VIDER: Ultimate Intelligence System 🧠🗝️🐛
+
+[![Version](https://img.shields.io/badge/Version-1.0_Genesis-blue.svg)]()
+[![Python](https://img.shields.io/badge/Python-3.10+-brightgreen.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)]()
+[![DevelopedBy](https://img.shields.io/badge/Developed%20By-MR.THANWA-orange.svg)]()
+
+**VIDER** คือระบบปัญญาประดิษฐ์รูปแบบใหม่ที่ถูกออกแบบขึ้นภายใต้แนวคิด **"หนอนอัจฉริยะ" (Smart Worm)** ที่สามารถบุกทะลวง สำรวจเชิงลึก และแก้ปัญหาแบบเรียลไทม์ได้ด้วยตัวเอง 100% 🐛🗝️🚪
+
+> *"เหมือนหนอนที่เข้าไปแล้วสร้างต่างๆ ขึ้นมา เช่น เจอใส่กำแพง ก็สร้างกุญแจขึ้นมาแล้วเปิดประตู และไปต่อ จนไปครบ และจัดลำดับความสำคัญได้"*
+
+## ✨ คุณสมบัติหลัก (Core Features) 🧩
+
+✅ **🐛 Deep Penetration (การบุกทะลวง):** ทำงานเหมือนหนอน มุดลึกเข้าไปในทุกระบบ ทุกข้อมูล ไม่จำกัดชั้นความลึก จนกว่าจะครบถ้วน
+✅ **🧱🗝️ Universal KeyGen (สร้างกุญแจสากล):** **จุดเด่นที่สุด!** เมื่อเจอสิ่งกีดขวาง, ล็อค, รหัสผ่าน, หรือข้อจำกัดใดๆ ระบบจะ **"วิเคราะห์และสร้างกุญแจ/วิธีการปลดล็อคขึ้นมาใหม่"** โดยอัตโนมัติ
+✅ **⚖️ Smart Priority (จัดลำดับความสำคัญ):** สมองอัจฉริยะรู้ว่าอะไรสำคัญก่อน-หลัง อะไรต้องทำก่อนเพื่อให้งานเดินหน้าต่อได้เร็วที่สุด
+✅ **🔄 Self-Evolution (เรียนรู้และพัฒนา):** สิ่งที่สร้าง/แก้ไขสำเร็จ จะถูกบันทึกเข้าคลังความรู้ ครั้งต่อไปใช้ได้ทันที ไม่ต้องเริ่มใหม่
+✅ **🎯 100% Completion:** ระบบจะทำงานไม่หยุดยั้ง จนกว่าจะสำรวจครบทุกทาง แก้ครบทุกปัญหา และได้ผลลัพธ์สมบูรณ์
+
+## ⚙️ หลักการทำงาน (How It Works) 🧠
+
+ระบบ VIDER ทำงานตามวงจร 6 ขั้นตอนนี้ตลอดเวลา:
+
+1. 🔍 **SCAN:** สำรวจและมุดเข้าไปในเป้าหมาย
+2. 🧱 **DETECT:** ตรวจพบสภาพแวดล้อม (เจอกำแพง/ทางเปิด/ข้อมูล)
+3. 🧠 **DECIDE:** สมองประมวลผลและจัดลำดับความสำคัญ
+4. 🗝️ **SOLVE:** **ถ้าเจอกำแพง -> สร้างกุญแจ/วิธีแก้ไข**
+5. 🚪 **PENETRATE:** ใช้งานและบุกเข้าไปข้างในทันที
+6. ✅ **COMPLETE:** วนกลับไปข้อ 1 จนกว่าจะครบ 100%
+
+## 🛠️ การติดตั้งและใช้งาน 🚀
+
+### 1️⃣ ความต้องการระบบ
+- Python 3.10+
+- OpenAI / DeepSeek API Key
+
+### 2️⃣ ติดตั้ง
+```bash
+git clone https://github.com/thanwaph/VIDER.git
+cd VIDER
+pip install -r requirements.txt
