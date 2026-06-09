@@ -1,3 +1,51 @@
+# vider_computer_agent.py - จุดควบคุมหลัก
+from pathlib import Path
+from vider_self_extend import ViderSelfExtend
+
+class ViderMainAgent:
+    def __init__(self):
+        self.root = Path(__file__).parent
+        self.extender = ViderSelfExtend(self.root)
+        self._load_core_modules()
+        print("🤖 VIDER AGENT พร้อมทำงานอย่างสมบูรณ์")
+
+    def _load_core_modules(self):
+        """โหลดส่วนหลักที่มีอยู่แล้ว"""
+        try:
+            from vider_language_analyzer import ViderLanguageAnalyzer
+            from vider_value_optimizer import ViderValueOptimizer
+            from vider_api_manager import ViderAPIManager
+            from vider_sonthi import ViderSonthi
+
+            self.lang = ViderLanguageAnalyzer()
+            self.optimizer = ViderValueOptimizer()
+            self.api = ViderAPIManager()
+            self.sonthi = ViderSonthi()
+            print("📚 โหลดส่วนหลักครบถ้วน")
+        except Exception as e:
+            print(f"⚠️ บางส่วนยังไม่พร้อม: {e}")
+
+    # --- ฟังก์ชันสำคัญ: สั่งสร้างฟีเจอร์ใหม่ที่นี่เลย ---
+    def create_new_feature(self, name, code, description=""):
+        """สั่งสร้างส่วนขยายใหม่ -> สร้างไฟล์และเปิดใช้งานให้เลย"""
+        result = self.extender.create_and_install_module(name, code, description)
+        print(result["message"])
+        return result
+
+    def run(self):
+        """เมนูหลักแบบรวมศูนย์"""
+        print("\n=== ระบบ VIDER หลัก ===")
+        print("1. สร้าง/พัฒนาระบบตามความต้องการ")
+        print("2. ตรวจสอบความสัมพันธ์ข้อมูล (SONTHI)")
+        print("3. จัดการข้อมูลจาก API")
+        print("4. ดูรายการส่วนขยายทั้งหมด")
+        print("5. สร้างส่วนขยายใหม่อัตโนมัติ")
+        print("0. ออกจากระบบ")
+
+if __name__ == "__main__":
+    agent = ViderMainAgent()
+    agent.run()
+
 from vider_sonthi import ViderSonthi
 
 09๐from vider_api_manager import ViderAPIManager  # เพิ่มบรรทัดนี้
