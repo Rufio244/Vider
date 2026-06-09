@@ -1,3 +1,5 @@
+from vider_sonthi import ViderSonthi
+
 09๐from vider_api_manager import ViderAPIManager  # เพิ่มบรรทัดนี้
 
 # vider_computer_agent.py - ตัวแทนทำงานอัตโนมัติสำหรับคอมพิวเตอร์
