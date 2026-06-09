@@ -1,3 +1,19 @@
+# เริ่มใช้งาน
+sonthi = ViderSonthi()
+
+# ข้อมูลตัวอย่างจากแหล่งต่างๆ
+data1 = {"รหัส": "C001", "ชื่อ": "ร้านกาแฟสด", "ที่อยู่": "เชียงใหม่"}
+data2 = {"รหัสลูกค้า": "C001", "ชื่อลูกค้า": "ร้านกาแฟสด", "เบอร์": "0812345678"}
+data3 = {"กลุ่ม": "อาหารและเครื่องดื่ม", "รหัสหมวด": "F01", "รายการ": "ร้านกาแฟสด"}
+
+# ขั้นตอน 1: ตรวจสอบความสัมพันธ์ที่มีอยู่
+analysis = sonthi.analyze_existing_data([data1, data2, data3])
+
+# ขั้นตอน 2: สร้างความสัมพันธ์ใหม่ตามความเป็นไปได้
+discovery = sonthi.discover_new_relations(analysis, min_confidence=0.5)
+
+# ขั้นตอน 3: ดูรายงาน
+print(sonthi.generate_report(analysis, discovery))
 
 from vider_api_manager import ViderAPIManager  # เพิ่มบรรทัดนี้
 
