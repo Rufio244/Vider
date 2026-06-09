@@ -7,6 +7,79 @@ class ViderMainAgent:
         self.root = Path(__file__).parent
         self.extender = ViderSelfExtend(self.root)
         self._load_core_modules()
+        print("\n🤖 ระบบ VIDER พร้อมใช้งานเต็มรูปแบบ")
+
+    def _load_core_modules(self):
+        """โหลดส่วนหลัก"""
+        try:
+            from vider_language_analyzer import ViderLanguageAnalyzer
+            from vider_value_optimizer import ViderValueOptimizer
+            from vider_api_manager import ViderAPIManager
+            from vider_sonthi import ViderSonthi
+            self.lang = ViderLanguageAnalyzer()
+            self.optimizer = ViderValueOptimizer()
+            self.api = ViderAPIManager()
+            self.sonthi = ViderSonthi()
+            print("📚 โหลดส่วนหลักครบถ้วน")
+        except Exception as e:
+            print(f"⚠️ ส่วนเสริมบางอย่างยังไม่ได้ติดตั้ง: {e}")
+
+    def create_new_feature(self, name, code, description=""):
+        return self.extender.create_and_install_module(name, code, description)
+
+    # --- ดึงจาก GitHub ---
+    def install_from_github(self, raw_url, module_name=None):
+        return self.extender.install_from_github(raw_url, module_name)
+
+    def show_modules(self):
+        modules = self.extender.list_installed_modules()
+        if not modules:
+            print("📂 ยังไม่มีโมดูลเพิ่มเติม")
+            return
+        print("\n📋 รายการโมดูลทั้งหมด:")
+        for name, info in modules.items():
+            source = info.get("source", "สร้างเอง")
+            print(f"• {name:<30} [{source}] - {info.get('description', '')}")
+
+    def run(self):
+        """เมนูหลัก"""
+        while True:
+            print("\n" + "="*50)
+            print("📌 เมนูหลัก VIDER")
+            print("1. สร้างระบบ/ฟีเจอร์ใหม่")
+            print("2. ดึงและติดตั้งจาก GitHub")
+            print("3. ดูรายการโมดูลทั้งหมด")
+            print("4. วิเคราะห์ความสัมพันธ์ข้อมูล (SONTHI)")
+            print("5. จัดการข้อมูลจาก API")
+            print("0. ออกจากระบบ")
+            choice = input("\nเลือกเมนู: ")
+
+            if choice == "0":
+                print("👋 ออกจากระบบ")
+                break
+            elif choice == "2":
+                url = input("วางลิงก์ดิบจาก GitHub: ").strip()
+                name = input("ตั้งชื่อไฟล์ (เว้นว่างให้เอาจากลิงก์): ").strip() or None
+                res = self.install_from_github(url, name)
+                print(res["message"] if res["success"] else f"❌ ผิดพลาด: {res['error']}")
+            elif choice == "3":
+                self.show_modules()
+            else:
+                print("⏳ ฟีเจอร์นี้กำลังพัฒนา หรือเลือกเมนูอื่น")
+
+if __name__ == "__main__":
+    agent = ViderMainAgent()
+    agent.run()
+
+# vider_computer_agent.py - จุดควบคุมหลัก
+from pathlib import Path
+from vider_self_extend import ViderSelfExtend
+
+class ViderMainAgent:
+    def __init__(self):
+        self.root = Path(__file__).parent
+        self.extender = ViderSelfExtend(self.root)
+        self._load_core_modules()
         print("🤖 VIDER AGENT พร้อมทำงานอย่างสมบูรณ์")
 
     def _load_core_modules(self):
