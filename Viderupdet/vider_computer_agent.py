@@ -385,3 +385,19 @@ if __name__ == "__main__":
 
     # เริ่มทำงาน
     agent.run_autonomous_mode()
+
+
+
+# ตัวอย่างการเรียกใช้ในตัวสร้าง
+from vider_language_analyzer import ViderLanguageAnalyzer
+
+analyzer = ViderLanguageAnalyzer()
+analysis = analyzer.analyze_text(คำสั่งของผู้ใช้)
+plan = analyzer.generate_action_plan(analysis)
+
+if plan["can_execute"]:
+    # สร้างตามแผนที่วางไว้อย่างแม่นยำ
+    pass
+else:
+    # ถามเพิ่มเติมเพื่อความชัดเจน
+    pass
