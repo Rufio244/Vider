@@ -1,3 +1,7 @@
+from vider_language_analyzer import ViderLanguageAnalyzer
+from vider_value_optimizer import ViderValueOptimizer  # เพิ่มบรรทัดนี้
+
+
 # vider_auto_builder.py - ระบบสร้างอัตโนมัติเต็มรูปแบบ
 import os
 import json
