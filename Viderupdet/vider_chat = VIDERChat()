@@ -1,0 +1,44 @@
+
+---
+
+### 3️⃣ ระบบบัญชีผู้ใช้ (`vider_login.py`)
+```python
+import hashlib
+import secrets
+import uuid
+from datetime import datetime, timedelta
+from typing import Dict
+
+class VIDERLogin:
+    def __init__(self):
+        self.users: Dict[str, dict] = {}
+        self.email_map: Dict[str, str] = {}
+        self.salt = secrets.token_hex(16)
+
+    def register(self, email: str, password: str, name: str = "") -> Dict:
+        email = email.lower()
+        if "@" not in email or email in self.email_map:
+            return {"success": False, "message": "อีเมลไม่ถูกต้องหรือมีอยู่แล้ว"}
+        if len(password) < 6:
+            return {"success": False, "message": "รหัสผ่านสั้นเกินไป"}
+
+        uid = f"USER_{uuid.uuid4().hex[:12].upper()}"
+        pwd_hash = hashlib.sha256(f"{password}{self.salt}".encode()).hexdigest()
+
+        self.users[uid] = {
+            "email": email, "name": name, "pwd_hash": pwd_hash,
+            "plan": "trial", "created": datetime.now()
+        }
+        self.email_map[email] = uid
+        return {"success": True, "user_id": uid}
+
+    def login(self, email: str, password: str) -> Dict:
+        email = email.lower()
+        if email not in self.email_map:
+            return {"success": False, "message": "อีเมลหรือรหัสผ่านไม่ถูกต้อง"}
+        uid = self.email_map[email]
+        if hashlib.sha256(f"{password}{self.salt}".encode()).hexdigest() != self.users[uid]["pwd_hash"]:
+            return {"success": False, "message": "อีเมลหรือรหัสผ่านไม่ถูกต้อง"}
+        return {"success": True, "user_id": uid, "token": secrets.token_hex(16)}
+
+vider_login = VIDERLogin()
