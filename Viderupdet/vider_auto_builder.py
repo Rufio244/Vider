@@ -1,3 +1,6 @@
+
+from vider_api_manager import ViderAPIManager  # เพิ่มบรรทัดนี้
+
 from vider_language_analyzer import ViderLanguageAnalyzer
 from vider_value_optimizer import ViderValueOptimizer  # เพิ่มบรรทัดนี้
 
